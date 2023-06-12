@@ -10,7 +10,7 @@ spec:
             --destination=asif1998/flask-hello-world:v1"]
     volumeMounts:
     - name: kaniko-secret
-      mountpath: "/kaniko/.docker"
+      mountPath: "/kaniko/.docker"
   volumes:
   - name: kaniko-secret
     secret:
