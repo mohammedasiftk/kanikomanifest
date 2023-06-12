@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    args: ["--context=git://github.com/mohammedasiftk/docker",
+            --destination=asif1998/flask-hello-world:v1"]
+    volumeMounts:
+    - name: kaniko-secret
+      mountpath: "/kaniko/.docker"
+  volumes:
+  - name: kaniko-secret
+    secret:
+      secretName: docker
+      items:
+      - key: .dockerconfigjson
+        path: config.json
+  restartPolicy: Never 
+        
+   
