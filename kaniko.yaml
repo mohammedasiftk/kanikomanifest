@@ -7,7 +7,7 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
     args: ["--context=git://github.com/mohammedasiftk/docker",
-            --destination=asif1998/flask-hello-world:v1"]
+            --destination=asif1998/flask-hello-world:v1000"]
     volumeMounts:
     - name: kaniko-secret
       mountPath: "/kaniko/.docker"
